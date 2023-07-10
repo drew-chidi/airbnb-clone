@@ -1,10 +1,10 @@
-import Navbar from '../navbar/navbar/Navbar';
 import ToasterProvider from './providers/ToasterProvider';
 import Modal from './components/Modals/Modal';
 import RegisterModal from './components/Modals/RegisterModal';
 import './globals.css';
 import { Nunito } from 'next/font/google';
 import LoginModal from './components/Modals/LoginModal';
+import Navbar from './components/Navbar/Navbar';
 
 export const metadata = {
   title: 'Airbnb',

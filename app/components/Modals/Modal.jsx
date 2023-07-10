@@ -1,8 +1,8 @@
 'use client';
 
 import { useCallback, useState } from 'react';
-import { IoMdClose } from 'react-icons/io   ';
-import Button from './Button';
+import { IoMdClose } from 'react-icons/io5';
+import Button from '../Button';
 
 const Modal = ({
   isOpen,
@@ -36,11 +36,11 @@ const Modal = ({
   }, [disabled, onSubmit]);
 
   const handleSecondaryAction = useCallback(() => {
-    if (disabled || secondaryAction) {
+    if (disabled || secondaryLabel) {
       return;
     }
     secondaryActionLabel();
-  }, [disabled, secondaryAction]);
+  }, [disabled, secondaryActionLabel, secondaryLabel]);
 
   if (!isOpen) return null;
 

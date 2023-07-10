@@ -1,3 +1,5 @@
+'use client'
+
 import axios from 'axios';
 import { useCallback, useState } from 'react';
 import { AiFillGithub } from 'react-icons/ai';
@@ -8,9 +10,11 @@ import Modal from './Modal';
 import Heading from '../Heading';
 import Input from '../Inputs/Input';
 import Button from '../Button';
+import useLoginModal from '@/app/hooks/useLoginModal';
 
 const RegisterModal = () => {
   const registerModal = useRegisterModal();
+  const loginModal = useLoginModal();
   const [isLoading, setIsLoading] = useState(false);
 
   const {
@@ -40,6 +44,11 @@ const RegisterModal = () => {
         setIsLoading(false);
       });
   };
+
+  const toggle = useCallback(() => {
+    registerModal.onClose();
+    loginModal.onOpen();
+  }, [loginModal, registerModal]);
 
   const bodyContent = (
     <div>
@@ -89,9 +98,9 @@ const RegisterModal = () => {
       />
       <div className='text-neutral-500 text-center mt-4 font-light'>
         <div className='justify-center flex items-center gap-2'>
-          <div>Allready have an account?</div>
+          <div>Already have an account?</div>
           <div
-            onClick={registerModal.onClose}
+            onClick={toggle}
             className='
           text-neutral-800
           cursor-pointer

@@ -1,3 +1,5 @@
+'use client';
+
 import axios from 'axios';
 import { useCallback, useState } from 'react';
 import { AiFillGithub } from 'react-icons/ai';
@@ -7,10 +9,13 @@ import Modal from './Modal';
 import Heading from '../Heading';
 import Input from '../Inputs/Input';
 import Button from '../Button';
+import { useRouter } from 'next/navigation';
+
 import useLoginModal from '@/app/hooks/useLoginModal';
 import useRegisterModal from '@/app/hooks/useRegisterModal';
 
 const LoginModal = () => {
+  const router = useRouter();
   const loginModal = useLoginModal();
   const registerModal = useRegisterModal();
   const [isLoading, setIsLoading] = useState(false);
@@ -21,7 +26,6 @@ const LoginModal = () => {
     formState: { errors },
   } = useForm({
     defaultValues: {
-      name: '',
       email: '',
       password: '',
     },
@@ -30,33 +34,25 @@ const LoginModal = () => {
   const onSubmit = (data) => {
     setIsLoading(true);
 
-    axios
-      .post('/api/register', data)
-      .then(() => {
-        loginModal.onClose();
-      })
-      .catch((error) => {
-        toast.error('Something went wrong');
-      })
-      .finally(() => {
-        setIsLoading(false);
-      });
+    setTimeout(() => {
+      console.log(data);
+      toast.success('Logged in');
+      router.refresh();
+      loginModal.onClose();
+    }, 3000);
   };
+
+  const toggle = useCallback(() => {
+    loginModal.onClose();
+    registerModal.onOpen();
+  }, [loginModal, registerModal]);
 
   const bodyContent = (
     <div>
-      <Heading title='Welcome to Airbnb' subtitle='create an account!' />
+      <Heading title='Welcome back' subtitle='Login to your account!' />
       <Input
         id='email'
         label='Email'
-        disabled={isLoading}
-        register={register}
-        errors={errors}
-        required
-      />
-      <Input
-        id='name'
-        label='Name'
         disabled={isLoading}
         register={register}
         errors={errors}
@@ -91,15 +87,15 @@ const LoginModal = () => {
       />
       <div className='text-neutral-500 text-center mt-4 font-light'>
         <div className='justify-center flex items-center gap-2'>
-          <div>Allready have an account?</div>
+          <div>First time using Airbnb?</div>
           <div
-            onClick={loginModal.onClose}
+            onClick={toggle}
             className='
           text-neutral-800
           cursor-pointer
           hover:underline'
           >
-            Log in
+            Create an account
           </div>
         </div>
       </div>
@@ -110,7 +106,7 @@ const LoginModal = () => {
     <Modal
       disabled={isLoading}
       isOpen={loginModal.isOpen}
-      title='Register'
+      title='Login'
       actionLabel='Continue'
       onClose={loginModal.onClose}
       onSubmit={handleSubmit(onSubmit)}
