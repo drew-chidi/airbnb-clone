@@ -1,7 +1,7 @@
 'use client';
 
 import Container from '../Container';
-import CategoryBox from './CategoryBox';
+import CategoryBox from '../CategoryBox';
 
 import { IoDiamond } from 'react-icons/io5';
 import {
@@ -17,7 +17,8 @@ import {
 import { MdOutlineVilla } from 'react-icons/md';
 import { BsSnow } from 'react-icons/bs';
 import { FaSkiing } from 'react-icons/fa';
-import { TbBeach, TbMountain } from 'react-icons/tb';
+import { TbBeach, TbMountain, TbPool } from 'react-icons/tb';
+
 import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 
 export const categories = [
@@ -33,8 +34,8 @@ export const categories = [
   },
   {
     label: 'Pool',
-    icon: MdOutlineVilla,
-    description: 'This property is modern!',
+    icon: TbPool,
+    description: 'This property has a beautiful pool!',
   },
   {
     label: 'Countryside',
@@ -49,7 +50,7 @@ export const categories = [
   {
     label: 'Lake',
     icon: GiBoatFishing,
-    description: 'This property is close to a lake!',
+    description: 'This property is near a lake!',
   },
   {
     label: 'Skiing',
@@ -69,12 +70,12 @@ export const categories = [
   {
     label: 'Arctic',
     icon: BsSnow,
-    description: 'This property is modern!',
+    description: 'This property is in an arctic environment!',
   },
   {
-    label: 'Cave',
+    label: 'Caves',
     icon: GiCaveEntrance,
-    description: 'This property is in a cave!',
+    description: 'This property is in a spooky cave!',
   },
   {
     label: 'Desert',
@@ -89,13 +90,14 @@ export const categories = [
   {
     label: 'Lux',
     icon: IoDiamond,
-    description: 'This property is luxurious!',
+    description: 'This property is new and luxurious!',
   },
 ];
 
 const Categories = () => {
   const router = useRouter();
   const params = useSearchParams();
+  const category = params?.get('category');
   const pathname = usePathname();
 
   const isHomepage = pathname === '/';
@@ -111,7 +113,7 @@ const Categories = () => {
           <CategoryBox
             key={item.label}
             label={item.label}
-            // selected={category === item.label}
+            selected={category === item.label}
             icon={item.icon}
           />
         ))}
