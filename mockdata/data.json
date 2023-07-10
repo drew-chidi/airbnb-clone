@@ -1,0 +1,58 @@
+{
+  "User": [
+    {
+      "id": "1",
+      "name": "John Doe",
+      "email": "johndoe@example.com",
+      "emailVerified": "2022-06-01T10:30:00Z",
+      "image": "https://example.com/avatar.jpg",
+      "hashedPassword": "hashedpassword123",
+      "createdAt": "2022-01-01T08:00:00Z",
+      "updatedAt": "2022-01-01T08:30:00Z",
+      "favoriteIds": ["1", "2"],
+      "accounts": [
+        {
+          "id": "1",
+          "userId": "1",
+          "type": "google",
+          "provider": "Google",
+          "providerAccountId": "google123",
+          "refresh_token": null,
+          "access_token": null,
+          "expires_at": null,
+          "token_type": null,
+          "scope": null,
+          "id_token": null,
+          "session_state": null
+        }
+      ],
+      "listings": [
+        {
+          "id": "1",
+          "title": "Cozy Apartment",
+          "description": "A comfortable apartment in the heart of the city.",
+          "imageSrc": "https://example.com/listing1.jpg",
+          "createdAt": "2022-02-01T14:00:00Z",
+          "category": "Apartment",
+          "roomCount": 2,
+          "bathroomCount": 1,
+          "guestCount": 4,
+          "locationValue": "City Center",
+          "userId": "1",
+          "price": 100
+        }
+      ],
+      "reservations": [
+        {
+          "id": "1",
+          "userId": "1",
+          "listingId": "1",
+          "startDate": "2022-03-01T12:00:00Z",
+          "endDate": "2022-03-05T10:00:00Z",
+          "totalPrice": 400,
+          "createdAt": "2022-02-15T08:00:00Z"
+        }
+      ]
+    }
+  ]
+}

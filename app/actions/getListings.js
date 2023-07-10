@@ -1,6 +1,7 @@
-// import prisma from '@/app/libs/prismadb';
+import mockData from '@/mockdata/data.json';
 
 export default async function getListings(params) {
+  console.log(mockData);
   try {
     const {
       userId,
@@ -13,67 +14,53 @@ export default async function getListings(params) {
       category,
     } = params;
 
-    let query = {};
+    const listings = mockData.User.flatMap((user) => user.listings).filter(
+      (listing) => {
+        if (userId && listing.userId !== userId) {
+          return false;
+        }
 
-    if (userId) {
-      query.userId = userId;
-    }
+        if (category && listing.category !== category) {
+          return false;
+        }
 
-    if (category) {
-      query.category = category;
-    }
+        if (roomCount && listing.roomCount < roomCount) {
+          return false;
+        }
 
-    if (roomCount) {
-      query.roomCount = {
-        gte: +roomCount,
-      };
-    }
+        if (guestCount && listing.guestCount < guestCount) {
+          return false;
+        }
 
-    if (guestCount) {
-      query.guestCount = {
-        gte: +guestCount,
-      };
-    }
+        if (bathroomCount && listing.bathroomCount < bathroomCount) {
+          return false;
+        }
 
-    if (bathroomCount) {
-      query.bathroomCount = {
-        gte: +bathroomCount,
-      };
-    }
+        if (locationValue && listing.locationValue !== locationValue) {
+          return false;
+        }
 
-    if (locationValue) {
-      query.locationValue = locationValue;
-    }
+        if (startDate && endDate) {
+          const reservationsOverlap = listing.reservations.some(
+            (reservation) =>
+              (reservation.endDate >= startDate &&
+                reservation.startDate <= startDate) ||
+              (reservation.startDate <= endDate &&
+                reservation.endDate >= endDate)
+          );
 
-    if (startDate && endDate) {
-      query.NOT = {
-        reservations: {
-          some: {
-            OR: [
-              {
-                endDate: { gte: startDate },
-                startDate: { lte: startDate },
-              },
-              {
-                startDate: { lte: endDate },
-                endDate: { gte: endDate },
-              },
-            ],
-          },
-        },
-      };
-    }
+          if (reservationsOverlap) {
+            return false;
+          }
+        }
 
-    const listings = await prisma.listing.findMany({
-      where: query,
-      orderBy: {
-        createdAt: 'desc',
-      },
-    });
+        return true;
+      }
+    );
 
-    const safeListings = listings.map((listing) => ({
+    const safeListings = listings?.map((listing) => ({
       ...listing,
-      createdAt: listing.createdAt.toISOString(),
+      createdAt: new Date(listing.createdAt).toISOString(),
     }));
 
     return safeListings;
