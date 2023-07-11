@@ -1,10 +1,10 @@
 import ToasterProvider from './providers/ToasterProvider';
-import Modal from './components/Modals/Modal';
 import RegisterModal from './components/Modals/RegisterModal';
 import './globals.css';
 import { Nunito } from 'next/font/google';
 import LoginModal from './components/Modals/LoginModal';
 import Navbar from './components/Navbar/Navbar';
+import Footer from './components/Footer/Footer';
 
 export const metadata = {
   title: 'Airbnb',
@@ -23,7 +23,8 @@ export default function RootLayout({ children }) {
         <LoginModal />
         <RegisterModal />
         <Navbar />
-        {children}
+        <div className='pb-20 pt-28'>{children}</div>
+        <Footer />
       </body>
     </html>
   );
