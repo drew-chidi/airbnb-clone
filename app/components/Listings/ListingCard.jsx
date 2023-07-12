@@ -10,6 +10,7 @@ import useCountries from '@/app/hooks/useCountries';
 
 import HeartButton from '../HeartButton';
 import Button from '../Button';
+import { AiFillStar } from 'react-icons/ai';
 // import ClientOnly from '../ClientOnly';
 
 const ListingCard = ({
@@ -38,13 +39,8 @@ const ListingCard = ({
   );
 
   const price = data.pricePerNight;
-
-  // const reservationDate = useMemo(() => {
-  //   const start = new Date(data.availableDates.start);
-  //   const end = new Date(data.availableDates.end);
-
-  //   return `${format(start, 'PP')} - ${format(end, 'PP')}`;
-  // }, [data]);
+  const region = data.location.region;
+  const country = data.location.label;
 
   const reservationDate = useMemo(() => {
     const start = new Date(data.availableDates.start);
@@ -64,7 +60,6 @@ const ListingCard = ({
 
   return (
     <>
-      {/* {data.map((data) => ( */}
       <div
         key={data.id}
         onClick={() => router.push(`/listings/${data.id}`)}
@@ -103,16 +98,22 @@ const ListingCard = ({
             </div>
           </div>
           <div>
-            <div className='font-semibold text-lg'>
-              {data.location.region}, {data.location.label}
+            <div className='flex justify-between'>
+              <div className='font-semibold text-lg'>
+                {region}, {country}
+              </div>
+              <div className='flex items-center gap-1'>
+                <AiFillStar />
+                <span>{data.averageRating}</span>
+              </div>
             </div>
             <div className='font-light text-neutral-500'>
-              {data.location.distanceAway}
+              {data.location.distanceAway} away
             </div>
             <div className='font-light text-neutral-500'>{reservationDate}</div>
           </div>
           <div className='flex flex-row items-center gap-1'>
-            <div className='font-semibold'>$ {data.pricePerNight}</div>
+            <div className='font-semibold'>$ {price}</div>
             {!reservation && <div className='font-light'>night</div>}
           </div>
           {onAction && actionLabel && (
@@ -125,7 +126,6 @@ const ListingCard = ({
           )}
         </div>
       </div>
-      {/* ))} */}
     </>
   );
 };

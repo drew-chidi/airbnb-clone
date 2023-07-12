@@ -13,8 +13,8 @@
       "pricePerNight": 100,
       "averageRating": 4.5,
       "location": {
-        "region": "Downtown",
-        "label": "US",
+        "region": "LaCampagne Tropicana",
+        "label": "Nigeria",
         "details": "City Center",
         "distanceAway": "2 miles"
       }
@@ -23,7 +23,7 @@
       "id": "2",
       "title": "Luxurious Villa",
       "description": "An exquisite villa with a private pool and stunning ocean views.",
-      "imageSrc": "/images/lake-house.jpg",
+      "imageSrc": "/images/modern-house.jpg",
       "host": "Jane Smith",
       "availableDates": {
         "start": "2022-01-01",
@@ -32,8 +32,8 @@
       "pricePerNight": 500,
       "averageRating": 4.8,
       "location": {
-        "region": "Beachfront",
-        "label": "US",
+        "region": "Lekki",
+        "label": "Nigeria",
         "details": "Beachfront",
         "distanceAway": "100 feet"
       }
@@ -61,7 +61,7 @@
       "id": "4",
       "title": "Modern Loft",
       "description": "A stylish loft with an open-concept design and city views.",
-      "imageSrc": "/images/lake-house.jpg",
+      "imageSrc": "/images/modern-house.jpg",
       "host": "Sarah Williams",
       "availableDates": {
         "start": "2022-01-01",
@@ -80,7 +80,7 @@
       "id": "5",
       "title": "Secluded Cabin",
       "description": "A cozy cabin surrounded by nature, perfect for a peaceful getaway.",
-      "imageSrc": "/images/lake-house.jpg",
+      "imageSrc": "/images/woods.png",
       "host": "Michael Brown",
       "availableDates": {
         "start": "2022-01-01",
@@ -89,8 +89,8 @@
       "pricePerNight": 120,
       "averageRating": 4.2,
       "location": {
-        "region": "Beachfront",
-        "label": "US",
+        "region": "Enugu",
+        "label": "Enugu",
         "details": "Beachfront",
         "distanceAway": "100 feet"
       }
