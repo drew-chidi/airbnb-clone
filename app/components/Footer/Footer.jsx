@@ -12,13 +12,14 @@ import { PiDot } from 'react-icons/pi';
 
 const Footer = () => {
   return (
-    <footer className='fixed w-full bg-white z-10 shadow-sm bottom-0'>
+    <footer className='fixed w-full bg-white z-10 shadow-sm bottom-0 text-sm text-[#717171]'>
+      {/* LARGER SCREENS */}
       <div className='py-4 border-t-[1px]'>
         <div className='hidden md:block md:px-10 xl:px-20'>
           <div className='flex flex-row justify-between items-center'>
             <ul className='flex flex-row items-center gap-2 flex-wrap'>
               <li className='flex flex-row items-center gap-2'>
-                <AiOutlineCopyrightCircle />
+                <AiOutlineCopyrightCircle className='text-[#717171]' />
                 <span>2023 Airbnb, Inc.</span>
               </li>
               <li className='leading-tight inline-block text-center my-auto'>

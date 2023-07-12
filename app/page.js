@@ -1,14 +1,15 @@
 import Container from '@/app/components/Container';
-import ListingCard from '@/app/components/listings/ListingCard';
 import EmptyState from '@/app/components/EmptyState';
 
-import getListings, { IListingsParams } from '@/app/actions/getListings';
+import getListings from '@/app/actions/getListings';
 import getCurrentUser from '@/app/actions/getCurrentUser';
+import ListingCard from './components/Listings/ListingCard';
 // import ClientOnly from './components/ClientOnly';
 
 const Home = async ({ searchParams }) => {
   const listings = await getListings(searchParams);
-  const currentUser = await getCurrentUser();
+
+  console.log(listings);
 
   if (listings.length === 0) {
     return (
@@ -35,12 +36,10 @@ const Home = async ({ searchParams }) => {
           '
       >
         {listings.map((listing) => (
-          <ListingCard
-            currentUser={currentUser}
-            key={listing.id}
-            data={listing}
-          />
+          <ListingCard key={listing.id} data={listing} />
         ))}
+
+        {/* <ListingCard data={listings} /> */}
       </div>
     </Container>
     // </ClientOnly>

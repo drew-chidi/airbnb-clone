@@ -1,58 +1,232 @@
 {
-  "User": [
+  "listings": [
     {
       "id": "1",
-      "name": "John Doe",
-      "email": "johndoe@example.com",
-      "emailVerified": "2022-06-01T10:30:00Z",
-      "image": "/images/placeholder.jpg",
-      "hashedPassword": "hashedpassword123",
-      "createdAt": "2022-01-01T08:00:00Z",
-      "updatedAt": "2022-01-01T08:30:00Z",
-      "favoriteIds": ["1", "2"],
-      "accounts": [
-        {
-          "id": "1",
-          "userId": "1",
-          "type": "google",
-          "provider": "Google",
-          "providerAccountId": "google123",
-          "refresh_token": null,
-          "access_token": null,
-          "expires_at": null,
-          "token_type": null,
-          "scope": null,
-          "id_token": null,
-          "session_state": null
-        }
-      ],
-      "listings": [
-        {
-          "id": "1",
-          "title": "Cozy Apartment",
-          "description": "A comfortable apartment in the heart of the city.",
-          "imageSrc": "/images/lake-house.jpg",
-          "createdAt": "2022-02-01T14:00:00Z",
-          "category": "Apartment",
-          "roomCount": 2,
-          "bathroomCount": 1,
-          "guestCount": 4,
-          "locationValue": "City Center",
-          "userId": "1",
-          "price": 100
-        }
-      ],
-      "reservations": [
-        {
-          "id": "1",
-          "userId": "1",
-          "listingId": "1",
-          "startDate": "2022-03-01T12:00:00Z",
-          "endDate": "2022-03-05T10:00:00Z",
-          "totalPrice": 400,
-          "createdAt": "2022-02-15T08:00:00Z"
-        }
-      ]
+      "title": "Cozy Apartment",
+      "description": "A comfortable apartment in the heart of the city.",
+      "imageSrc": "/images/lake-house.jpg",
+      "host": "John Doe",
+      "availableDates": {
+        "start": "2022-01-01",
+        "end": "2022-01-31"
+      },
+      "pricePerNight": 100,
+      "averageRating": 4.5,
+      "location": {
+        "region": "Downtown",
+        "label": "US",
+        "details": "City Center",
+        "distanceAway": "2 miles"
+      }
+    },
+    {
+      "id": "2",
+      "title": "Luxurious Villa",
+      "description": "An exquisite villa with a private pool and stunning ocean views.",
+      "imageSrc": "/images/lake-house.jpg",
+      "host": "Jane Smith",
+      "availableDates": {
+        "start": "2022-01-01",
+        "end": "2022-12-31"
+      },
+      "pricePerNight": 500,
+      "averageRating": 4.8,
+      "location": {
+        "region": "Beachfront",
+        "label": "US",
+        "details": "Beachfront",
+        "distanceAway": "100 feet"
+      }
+    },
+    {
+      "id": "3",
+      "title": "Charming Cottage",
+      "description": "A charming cottage nestled in the countryside.",
+      "imageSrc": "/images/lake-house.jpg",
+      "host": "David Johnson",
+      "availableDates": {
+        "start": "2022-01-01",
+        "end": "2022-12-31"
+      },
+      "pricePerNight": 200,
+      "averageRating": 4.3,
+      "location": {
+        "region": "Beachfront",
+        "label": "US",
+        "details": "Beachfront",
+        "distanceAway": "100 feet"
+      }
+    },
+    {
+      "id": "4",
+      "title": "Modern Loft",
+      "description": "A stylish loft with an open-concept design and city views.",
+      "imageSrc": "/images/lake-house.jpg",
+      "host": "Sarah Williams",
+      "availableDates": {
+        "start": "2022-01-01",
+        "end": "2022-12-31"
+      },
+      "pricePerNight": 150,
+      "averageRating": 4.6,
+      "location": {
+        "region": "Beachfront",
+        "label": "US",
+        "details": "Beachfront",
+        "distanceAway": "100 feet"
+      }
+    },
+    {
+      "id": "5",
+      "title": "Secluded Cabin",
+      "description": "A cozy cabin surrounded by nature, perfect for a peaceful getaway.",
+      "imageSrc": "/images/lake-house.jpg",
+      "host": "Michael Brown",
+      "availableDates": {
+        "start": "2022-01-01",
+        "end": "2022-12-31"
+      },
+      "pricePerNight": 120,
+      "averageRating": 4.2,
+      "location": {
+        "region": "Beachfront",
+        "label": "US",
+        "details": "Beachfront",
+        "distanceAway": "100 feet"
+      }
+    },
+    {
+      "id": "6",
+      "title": "Historic Townhouse",
+      "description": "A beautifully restored historic townhouse in a charming neighborhood.",
+      "imageSrc": "/images/lake-house.jpg",
+      "host": "Jennifer Davis",
+      "availableDates": {
+        "start": "2022-01-01",
+        "end": "2022-12-31"
+      },
+      "pricePerNight": 250,
+      "averageRating": 4.9,
+      "location": {
+        "region": "Beachfront",
+        "label": "US",
+        "details": "Beachfront",
+        "distanceAway": "100 feet"
+      }
+    },
+    {
+      "id": "7",
+      "title": "Beachfront Bungalow",
+      "description": "A cozy bungalow just steps away from the beach.",
+      "imageSrc": "/images/lake-house.jpg",
+      "host": "Christopher Wilson",
+      "availableDates": {
+        "start": "2022-01-01",
+        "end": "2022-12-31"
+      },
+      "pricePerNight": 90,
+      "averageRating": 4.1,
+      "location": {
+        "region": "Beachfront",
+        "label": "US",
+        "details": "Beachfront",
+        "distanceAway": "100 feet"
+      }
+    },
+    {
+      "id": "8",
+      "title": "Rustic Farmhouse",
+      "description": "A charming farmhouse surrounded by fields and rolling hills.",
+      "imageSrc": "/images/lake-house.jpg",
+      "host": "Karen Martinez",
+      "availableDates": {
+        "start": "2022-01-01",
+        "end": "2022-12-31"
+      },
+      "pricePerNight": 180,
+      "averageRating": 4.7,
+      "location": {
+        "region": "Beachfront",
+        "label": "US",
+        "details": "Beachfront",
+        "distanceAway": "100 feet"
+      }
+    },
+    {
+      "id": "9",
+      "title": "Urban Studio",
+      "description": "A modern studio apartment in the heart of the city.",
+      "imageSrc": "/images/lake-house.jpg",
+      "host": "Matthew Taylor",
+      "availableDates": {
+        "start": "2022-01-01",
+        "end": "2022-12-31"
+      },
+      "pricePerNight": 80,
+      "averageRating": 4.4,
+      "location": {
+        "region": "Beachfront",
+        "label": "US",
+        "details": "Beachfront",
+        "distanceAway": "100 feet"
+      }
+    },
+    {
+      "id": "10",
+      "title": "Mountain Retreat",
+      "description": "A peaceful retreat nestled in the mountains, offering breathtaking views.",
+      "imageSrc": "/images/lake-house.jpg",
+      "host": "Lauren Anderson",
+      "availableDates": {
+        "start": "2022-01-01",
+        "end": "2022-12-31"
+      },
+      "pricePerNight": 220,
+      "averageRating": 4.8,
+      "location": {
+        "region": "Beachfront",
+        "label": "US",
+        "details": "Beachfront",
+        "distanceAway": "100 feet"
+      }
+    },
+    {
+      "id": "11",
+      "title": "Lakefront House",
+      "description": "A beautiful house located on the shores of a tranquil lake.",
+      "imageSrc": "/images/lake-house.jpg",
+      "host": "Mark Thompson",
+      "availableDates": {
+        "start": "2022-01-01",
+        "end": "2022-12-31"
+      },
+      "pricePerNight": 300,
+      "averageRating": 4.9,
+      "location": {
+        "region": "Beachfront",
+        "label": "US",
+        "details": "Beachfront",
+        "distanceAway": "100 feet"
+      }
+    },
+    {
+      "id": "12",
+      "title": "Cosy Caravan",
+      "description": "A comfortable caravan with all the necessary amenities for a cozy getaway.",
+      "imageSrc": "/images/lake-house.jpg",
+      "host": "Emily Thomas",
+      "availableDates": {
+        "start": "2022-01-01",
+        "end": "2022-12-31"
+      },
+      "pricePerNight": 70,
+      "averageRating": 4.2,
+      "location": {
+        "region": "Beachfront",
+        "label": "US",
+        "details": "Beachfront",
+        "distanceAway": "100 feet"
+      }
     }
   ]
 }
