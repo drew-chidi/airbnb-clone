@@ -3,7 +3,7 @@ import mockData from '@/mockdata/data.json';
 export default function getListings(params) {
   try {
     const {
-      userId,
+      // userId,
       roomCount,
       guestCount,
       bathroomCount,
