@@ -1,7 +1,7 @@
 'use client';
 
 import Container from '../Container';
-import CategoryBox from '../CategoryBox';
+import CategoryBox from '../CategoryBox.jsx';
 
 import { IoDiamond } from 'react-icons/io5';
 import {
@@ -18,14 +18,26 @@ import { MdOutlineVilla } from 'react-icons/md';
 import { BsSnow } from 'react-icons/bs';
 import { FaSkiing } from 'react-icons/fa';
 import { TbBeach, TbMountain, TbPool } from 'react-icons/tb';
+import { RiRobotLine } from 'react-icons/ri';
+import { GiGolfFlag } from 'react-icons/gi';
 
 import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 
-export const categories = [
+const categories = [
+  {
+    label: 'OMG',
+    icon: RiRobotLine,
+    description: 'Breathtaking architecture!',
+  },
   {
     label: 'Beach',
     icon: TbBeach,
     description: 'This property is close to the beach!',
+  },
+  {
+    label: 'Play',
+    icon: GiGolfFlag,
+    description: 'This property is has a play ground',
   },
   {
     label: 'Windmills',
@@ -33,7 +45,7 @@ export const categories = [
     description: 'This property has windmills!',
   },
   {
-    label: 'Pool',
+    label: 'Amazing Pool',
     icon: TbPool,
     description: 'This property has a beautiful pool!',
   },
