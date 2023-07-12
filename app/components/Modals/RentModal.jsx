@@ -8,13 +8,12 @@ import { useMemo, useState } from 'react';
 import useRentModal from '@/app/hooks/useRentModal';
 
 import Modal from './Modal';
-import Counter from '../inputs/Counter';
-import CategoryInput from '../inputs/CategoryInput';
-import CountrySelect from '../inputs/CountrySelect';
-import { categories } from '../navbar/Categories';
-import ImageUpload from '../inputs/ImageUpload';
-import Input from '../inputs/Input';
 import Heading from '../Heading';
+import CategoryInput from '../Inputs/CategoryInput';
+import CountrySelect from '../Inputs/CountrySelect';
+import Counter from '../Inputs/Counter';
+import ImageUpload from '../Inputs/ImageUpload';
+import Input from '../Inputs/Input';
 
 const STEPS = {
   CATEGORY: 0,
@@ -65,7 +64,7 @@ const RentModal = () => {
       dynamic(() => import('../Map'), {
         ssr: false,
       }),
-    [location]
+    []
   );
 
   const setCustomValue = (id, value) => {
