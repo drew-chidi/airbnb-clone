@@ -4,7 +4,7 @@ import './globals.css';
 import { Nunito, Open_Sans } from 'next/font/google';
 import LoginModal from './components/Modals/LoginModal';
 import Footer from './components/Footer/Footer';
-import Navbar from './components/Navbar/Navbar.jsx';
+import Navbar from './components/Navbar/Navbar';
 
 export const metadata = {
   title: 'Airbnb',

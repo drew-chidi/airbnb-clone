@@ -1,4 +1,4 @@
-'use client'
+'use client';
 
 import axios from 'axios';
 import { useCallback, useState } from 'react';
@@ -31,18 +31,6 @@ const RegisterModal = () => {
 
   const onSubmit = (data) => {
     setIsLoading(true);
-
-    axios
-      .post('/api/register', data)
-      .then(() => {
-        registerModal.onClose();
-      })
-      .catch((error) => {
-        toast.error('Something went wrong');
-      })
-      .finally(() => {
-        setIsLoading(false);
-      });
   };
 
   const toggle = useCallback(() => {
