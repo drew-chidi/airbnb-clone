@@ -1,10 +1,10 @@
 import ToasterProvider from './providers/ToasterProvider';
 import RegisterModal from './components/Modals/RegisterModal';
 import './globals.css';
-import { Nunito, Open_Sans, Montserrat } from 'next/font/google';
+import { Nunito, Open_Sans } from 'next/font/google';
 import LoginModal from './components/Modals/LoginModal';
-import Navbar from './components/Navbar/Navbar';
 import Footer from './components/Footer/Footer';
+import Navbar from './components/Navbar/Navbar';
 
 export const metadata = {
   title: 'Airbnb',
@@ -16,10 +16,6 @@ const font = Nunito({
 });
 
 const open_sans = Open_Sans({
-  subsets: ['latin'],
-});
-
-const montserrat = Open_Sans({
   subsets: ['latin'],
 });
 

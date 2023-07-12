@@ -2,7 +2,7 @@ import Container from '@/app/components/Container';
 import EmptyState from '@/app/components/EmptyState';
 
 import getListings from '@/app/actions/getListings';
-import getCurrentUser from '@/app/actions/getCurrentUser';
+// import getCurrentUser from '@/app/actions/getCurrentUser';
 import ListingCard from './components/Listings/ListingCard';
 
 const Home = async ({ searchParams }) => {
