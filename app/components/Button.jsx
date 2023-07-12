@@ -15,7 +15,7 @@ const Button = ({ label, onClick, disabled, outline, small, icon: Icon }) => {
       ${small ? 'border-[1px]' : 'border-2'}
       `}
     >
-      {icon && <Icon size={24} className='absolute left-4 top-3' />}
+      {Icon && <Icon size={24} className='absolute left-4 top-3' />}
       {label}{' '}
     </button>
   );
