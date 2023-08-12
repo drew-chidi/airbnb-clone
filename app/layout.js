@@ -4,7 +4,7 @@ import './globals.css';
 import { Nunito, Open_Sans } from 'next/font/google';
 import LoginModal from './components/Modals/LoginModal';
 import Footer from './components/Footer/Footer';
-// import Navbar from './components/Navbar/Navbar';
+import Navbar from './components/Navbar/Navbar';
 
 export const metadata = {
   title: 'Airbnb',
@@ -26,7 +26,7 @@ export default function RootLayout({ children }) {
         <ToasterProvider />
         <LoginModal />
         <RegisterModal />
-        {/* <Navbar /> */}
+        <Navbar />
         <div className='pb-20 pt-28'>{children}</div>
         <Footer />
       </body>
