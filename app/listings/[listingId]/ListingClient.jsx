@@ -1,3 +1,5 @@
+'use client';
+
 import { useRouter } from 'next/navigation';
 import React, { useCallback, useEffect, useMemo } from 'react';
 import { differenceInCalendarDays, eachDayOfInterval } from 'date-fns';
