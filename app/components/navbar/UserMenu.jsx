@@ -3,20 +3,21 @@
 import { useCallback, useState } from 'react';
 import { AiOutlineMenu } from 'react-icons/ai';
 import { useRouter } from 'next/navigation';
+import { signOut } from 'next-auth/react';
 
 import useLoginModal from '@/app/hooks/useLoginModal';
 import useRegisterModal from '@/app/hooks/useRegisterModal';
-// import useRentModal from '@/app/hooks/useRentModal';
+import useRentModal from '@/app/hooks/useRentModal';
+import { useRouter } from 'next/navigation';
 
 import MenuItem from './MenuItem';
 import Avatar from '../Avatar';
 
 const UserMenu = ({ currentUser }) => {
   const router = useRouter();
-
   const loginModal = useLoginModal();
   const registerModal = useRegisterModal();
-  // const rentModal = useRentModal();
+  const rentModal = useRentModal();
 
   const [isOpen, setIsOpen] = useState(false);
 
@@ -110,7 +111,7 @@ const UserMenu = ({ currentUser }) => {
                   label='My properties'
                   onClick={() => router.push('/properties')}
                 />
-                {/* <MenuItem label='Airbnb your home' onClick={rentModal.onOpen} /> */}
+                <MenuItem label='Airbnb your home' onClick={rentModal.onOpen} />
                 <hr />
                 <MenuItem label='Logout' onClick={() => signOut()} />
               </>
